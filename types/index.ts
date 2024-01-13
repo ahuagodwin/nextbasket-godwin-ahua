@@ -108,3 +108,13 @@ export interface AnchorProps {
     handleClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
+
+export interface HeroProps {
+    title?: string;
+    quantity?: string;
+    text?: string;
+    img?: string | StaticImageData;
+    as: string
+    variant?: "title-small" | "title-medium"
+}
+

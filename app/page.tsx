@@ -1,6 +1,5 @@
-import { Products } from "@/components";
-import { Icons } from "@/constants";
-import { Button, Container, CustomInput, Padding } from "@/elements";
+import { Features, HeroBanner, Products } from "@/components";
+import { Container, Padding } from "@/elements";
 import React from "react";
 
 const page = () => {
@@ -9,6 +8,8 @@ const page = () => {
 
      <Padding>
         <Container>
+            <HeroBanner />
+            <Features />
             <Products />
         </Container>
      </Padding>

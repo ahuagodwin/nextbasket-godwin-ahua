@@ -10,7 +10,10 @@ import {
   InstagramIcon,
   YoutubeIcon,
   SearchIcon,
-  MenuIcon
+  MenuIcon,
+  ConcreteIcon,
+  GrowthIcon,
+  EasyIcon
 } from "@/assets/icons/icons";
 
 import { FaSpinner as Spinner } from "react-icons/fa";
@@ -30,5 +33,8 @@ export const Icons = {
     YoutubeIcon,
     SearchIcon, 
     Spinner,
-    MenuIcon
+    MenuIcon,
+    ConcreteIcon,
+  GrowthIcon,
+  EasyIcon
 }

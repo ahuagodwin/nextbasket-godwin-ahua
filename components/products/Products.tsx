@@ -2,7 +2,7 @@
 
 import { ProductCard } from "@/common";
 import { datas } from "@/data";
-import { View } from "@/elements";
+import { Section, View, Button } from "@/elements";
 import React from "react";
 
 const AllProducts = () => {
@@ -12,6 +12,10 @@ const AllProducts = () => {
       <View className="product-grid">
         <ProductCard data={sampleData} />
       </View>
+
+      <Section className="mt-[24px]">
+            <Button title="LOAD MORE PRODUCT" stylesType="primary" size="medium" />
+      </Section>
     </View>
   );
 };
