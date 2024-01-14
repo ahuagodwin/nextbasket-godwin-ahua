@@ -1,7 +1,7 @@
 
 
 import { ImageLoader, StaticImageData } from "next/image";
-import React, { HTMLAttributes, MouseEventHandler, SVGAttributes } from "react"
+import React, { HTMLAttributes, MouseEventHandler, SVGAttributes, SyntheticEvent } from "react"
 import type { UrlObject } from 'url';
 type Url = string | UrlObject;
 
@@ -27,6 +27,7 @@ export interface ImageProps {
     objectPosition?: string | undefined;
     lazyBoundary?: string | undefined;
     lazyRoot?: string | undefined;
+    className?: string
 }
 
 export interface User {
@@ -41,6 +42,11 @@ export interface User {
 
 export interface DataProps {
     data?: Array<User>
+}
+
+export interface PostProps {
+    data?: Array<any> | null | undefined
+    category?: Array<any> | null | undefined
 }
 
 
@@ -118,3 +124,21 @@ export interface HeroProps {
     variant?: "title-small" | "title-medium"
 }
 
+
+export interface RatingProps {
+    readonly?: boolean;
+    name?: "simple-controlled" | "read-only" | "disabled" | "no-value"
+    disabled?: boolean
+    value?: number | null | undefined;
+    onChange?: (event: SyntheticEvent<Element, Event>, value: number | null) => void;
+    className?: string;
+    key?: number;
+}
+
+
+export interface HeadingProps {
+    titleSmall?: string
+    title?: string
+    desc?: string
+    className?: string
+}

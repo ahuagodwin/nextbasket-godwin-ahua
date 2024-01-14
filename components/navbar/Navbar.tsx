@@ -3,13 +3,29 @@
 import { Icons } from "@/constants";
 import { Container, Padding, Section,  Span,  View } from "@/elements";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import NavbarTop from "./Navbar_Top";
 import { usePathname } from "next/navigation";
 import { datas } from "@/data";
 
 const Navbar = () => {
     const pathname = usePathname()
+    const [ isFixed, setIsFixed] = React.useState<boolean>(false)
+    
+    useEffect(() => {
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        const triggerHeight = 100;
+  
+        setIsFixed(scrollY > triggerHeight);
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
 
   return (
     <>
@@ -17,7 +33,7 @@ const Navbar = () => {
       
       <Padding>
         <Container>
-          <View className="nav_container">
+          <View className={`nav_container ${isFixed ? 'nav-fixed' : 'inherit'}`}>
             <View className="nav-left">Bandage</View>
                 <View className="nav-right">
                     <Section className="right-links">

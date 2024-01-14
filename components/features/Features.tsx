@@ -1,5 +1,6 @@
 "use client"
 
+import { Heading } from '@/common'
 import { Icons } from '@/constants'
 import { Boxs, Container, Padding, Section, Span, Text, View } from '@/elements'
 import React from 'react'
@@ -28,13 +29,9 @@ const Features = () => {
     <>
         <Padding>
             <Container>
-                <Boxs className='features-container'>
-                    <Section className='feature-content'>
-                        <Text>Featured Product</Text>
-                        <Text>The Best Services</Text>  
-                        <Span>Problems trying to resolve 
-                            the conflict between </Span>  
-                    </Section>   
+                <Boxs className='features-container'> 
+                    <Heading titleSmall='Featured Product' title='The Best Services' desc='Problems trying to resolve 
+                            the conflict between ' />
 
                     <View className='feature-body-container'>
                         {data.map((item, index) => (

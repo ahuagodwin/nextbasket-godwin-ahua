@@ -7,6 +7,7 @@ import React from 'react'
 const Footer = () => {
   return (
    <>
+
    {/* footer logo and social icons */}
          <View className='footer'>
         <Padding>

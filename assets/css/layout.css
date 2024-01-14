@@ -1,7 +1,5 @@
 
-
-
-/* layout css "nav_topbar || footer" */
+/* layout css "nav_top bar || footer" */
 
 #nav_top {
     display: none;
@@ -66,7 +64,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    width: 1155px;
+    width: 900px;
 }
 
 .right-links .links {
@@ -133,6 +131,17 @@
     display: block;
 }
 
+.nav-fixed {
+    position: fixed;
+    top: -20px;
+    left: 0;
+    z-index: 1000; 
+    background-color: var(--app-theme);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 33px;
+    padding-right: 33px;
+    overflow-x: hidden;
+  }
 
 /* RESPONSIVENESS */
 
@@ -184,4 +193,16 @@
     .nav-menu {
         display: none;
     }
+
+    .nav-fixed {
+        position: fixed;
+        top: -20px;
+        left: 0;
+        z-index: 1000; 
+        background-color: var(--app-theme);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding-left: 100px;
+        padding-right: 100px;
+        overflow-x: hidden;
+      }
 }

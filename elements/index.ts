@@ -11,7 +11,8 @@ import {
   Boxs,
   FlexGrid,
   Anchor,
-  Img
+  Img,
+  ProductRating
 } from "./Styles";
 
 export {
@@ -27,5 +28,6 @@ export {
   Boxs,
   FlexGrid,
   Anchor,
-  Img
+  Img,
+  ProductRating
 };

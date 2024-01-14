@@ -1,19 +1,21 @@
-import { Features, HeroBanner, Products } from "@/components";
+import { CTA, Features, HeroBanner, Posts, Products, Testimonial } from "@/components";
 import { Container, Padding } from "@/elements";
 import React from "react";
 
 const page = () => {
   return (
-    <div>
-
-     <Padding>
+    <>
+      <Padding>
         <Container>
-            <HeroBanner />
-            <Features />
-            <Products />
+          <HeroBanner />
+          <Products />
+          <Features />
+          <Posts />
+          <Testimonial />
         </Container>
-     </Padding>
-    </div>
+      </Padding>
+      <CTA />
+    </>
   );
 };
 

@@ -19,6 +19,29 @@ import Product9 from "./products/product9.png";
 import Product10 from "./products/product10.png";
 
 
+// POST ImageS
+import Post1 from "./post/post1.png"
+import Post2 from "./post/post2.png"
+import Post3 from "./post/post3.png"
+
+
+// Gallery Images
+import Gallery1 from "./gallery/gallery1.png"
+import Gallery2 from "./gallery/gallery2.png"
+import Gallery3 from "./gallery/gallery3.png"
+import Gallery4 from "./gallery/gallery4.png"
+import Gallery5 from "./gallery/gallery5.png"
+import Gallery6 from "./gallery/gallery6.png"
+import Gallery7 from "./gallery/gallery7.png"
+import Gallery8 from "./gallery/gallery8.png"
+import Gallery9 from "./gallery/gallery9.png"
+
+// Designer
+import Designer from "./designer.jpg"
+
+// CTA
+import CTABg from "./cta.png"
+import MobileCTA from "./mobile-cta.png"
 
 export const Images = {
     Hero1,
@@ -34,5 +57,20 @@ export const Images = {
     Product7,
     Product8,
     Product9,
-    Product10
+    Product10,
+    Post1,
+    Post2,
+    Post3,
+    Gallery1,
+    Gallery2,
+    Gallery3,
+    Gallery4,
+    Gallery5,
+    Gallery6,
+    Gallery7,
+    Gallery8,
+    Gallery9,
+    Designer,
+    CTABg,
+    MobileCTA
 }

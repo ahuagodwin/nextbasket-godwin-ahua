@@ -2,7 +2,6 @@
 
 export const HomePrefix = "/"
 
-
 export const paths = {
     home: HomePrefix,
     store: HomePrefix + "store",
