@@ -12,12 +12,14 @@
     --app-gray: rgba(115, 115, 115, 1);
     --app-light-blue: rgba(35, 166, 240, 1);
     --app-gray-light: rgba(189, 189, 189, 1);
-    --app-gray-light-sec: rgba(250, 250, 250, 1);
+    --app-gray-light-sec: rgb(250, 250, 250);
     --app-warning: rgba(231, 64, 64, 1);
     --app-success: rgba(45, 192, 113, 1);
     --app-pending: rgba(243, 205, 3, 1);
     --app-family: 'Montserrat', sans-serif;
+    --app-border: rgba(236, 236, 236, 1);
     --app-card-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    --app-alert-bg: rgba(231, 124, 64, 1);
 
 }
 
@@ -48,6 +50,27 @@
   .footer-bg {
     background: var(--app-theme);
   }
+
+
+.tag-line {
+  display: flex;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  color: var(--app-primary);
+  padding-bottom: 24px;
+  padding-left: 24px;
+  width: 100%;
+}
+
+.bordered {
+  border-top: 2px solid var(--app-border);
+  padding-top: 24px;
+}
 
 
   /* loading spinner keyframe animation and spin variable */

@@ -1,0 +1,139 @@
+
+
+.single-product-container {
+    width: 100%;
+    height: 100%;
+}
+
+
+.single-prd-left {
+    width: 100%;
+    height: 277px;
+}
+
+.single-prd-left img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+
+@media(min-width: 1024px) {
+
+.single-product-container {
+    max-width: 1050px;
+    max-height: 550px;
+}
+
+.single-prd-left {
+    max-width: 506px;
+    height: 450px;
+}
+
+.single-prd-left img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.single-prd-right {
+    max-width: 510px;
+    height: 450px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 11px 24px 24px 0;
+}
+
+.single-name  {
+    color: var(--app-primary);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+}
+
+.single-rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0 20px 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: var(--app-gray);
+}
+
+.single-price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--app-primary);
+    padding-bottom: 5px;
+    letter-spacing: 0.2px;
+}
+
+.single-stock {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--app-gray);
+    letter-spacing: 0.2px;
+    gap: 5px;
+    padding-bottom: 119px;
+}
+
+.single-stock span {
+    color: var(--app-light-blue);
+}
+
+.single-colors {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-top: 29px;
+    padding-bottom: 67px;
+    border-top: 2px solid var(--app-border);
+    width: 100%;
+}
+
+.single-cart {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.single-breadcrumbs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--app-primary);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    gap: 5px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.single-breadcrumbs span {
+    color: var(--app-gray);
+}
+}

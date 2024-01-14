@@ -3,7 +3,7 @@
 import { Heading, ProductCard } from "@/common";
 import { Icons } from "@/constants";
 import { datas } from "@/data";
-import { Section, View, Button } from "@/elements";
+import { Section, View, Button, FlexGrid } from "@/elements";
 import React from "react";
 
 const AllProducts = () => {
@@ -13,13 +13,13 @@ const AllProducts = () => {
       <Heading
         titleSmall="Featured Product"
         title="BESTSELLER PRODUCTS"
-        desc="Problems trying to resolve 
-                            the conflict between "
+        desc="Problems trying to resolve the conflict between "
         className="mb-[56px]"
       />
-      <View className="product-grid">
-        <ProductCard data={sampleData} />
-      </View>
+          <FlexGrid isGrid={true} gridType="grid5" isBorder={false}>
+              <ProductCard data={sampleData} />
+          </FlexGrid>
+
 
       <Section className="mt-[50px]">
         <Button

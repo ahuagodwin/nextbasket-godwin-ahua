@@ -38,9 +38,8 @@ const Navbar = () => {
                 <View className="nav-right">
                     <Section className="right-links">
                     {datas.navData.map((item, index) => {
-                        const isActive = pathname.startsWith(item.path)
                     return (
-                        <Link className={`links ${isActive  ? "active" : "links" }`} href={item?.path} key={index}>{item?.title}</Link>
+                        <Link className={`links ${pathname === item?.path  ? "active" : "links" }`} href={item?.path} key={index}>{item?.title}</Link>
                     )
                         })}
                     </Section>

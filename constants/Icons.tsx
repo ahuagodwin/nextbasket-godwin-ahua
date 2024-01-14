@@ -16,7 +16,10 @@ import {
   EasyIcon,
   ClockIcon,
   ChartIcon,
-  ArrowRight
+  ArrowRight,
+  BasketIcon,
+  LikeIcon,
+  MoreIcon
 } from "@/assets/icons/icons";
 import { FaSpinner as Spinner } from "react-icons/fa";
 
@@ -41,5 +44,8 @@ export const Icons = {
   EasyIcon,
   ChartIcon,
   ClockIcon,
-  ArrowRight
+  ArrowRight,
+  BasketIcon,
+  LikeIcon,
+  MoreIcon
 };

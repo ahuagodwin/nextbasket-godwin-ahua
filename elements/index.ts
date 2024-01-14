@@ -12,7 +12,7 @@ import {
   FlexGrid,
   Anchor,
   Img,
-  ProductRating
+  Ratings
 } from "./Styles";
 
 export {
@@ -29,5 +29,5 @@ export {
   FlexGrid,
   Anchor,
   Img,
-  ProductRating
+  Ratings
 };

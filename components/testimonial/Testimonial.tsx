@@ -1,7 +1,7 @@
 "use client";
 
 import { datas } from "@/data";
-import { Boxs, Img, ProductRating, Section, Span, Text, View } from "@/elements";
+import { Boxs, Img, Ratings, Section, Span, Text, View } from "@/elements";
 import { Images } from "@/public";
 import React from "react";
 
@@ -14,7 +14,7 @@ const Testimonial = () => {
       <Section className="testimonial-left">
         <Text className="tag">What they say about us</Text>
         <Img src={Images.Designer} alt="" />
-        <ProductRating
+        <Ratings
           name="simple-controlled"
           value={value}
           onChange={(e, newValue) => {

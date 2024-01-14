@@ -3,7 +3,9 @@ import { datas } from "@/data";
 import { Boxs, Section, Span, Text, View } from "@/elements";
 import React from "react";
 
+
 const Post = () => {
+
   return (
     <View className="post-container">
       <Section className="post-caption-text">
@@ -12,9 +14,11 @@ const Post = () => {
         Featured Posts
         </Text>
       </Section>
+
       <Boxs className="post-container-wrapper">
         <PostCard data={datas.postData} category={datas.postCategory} />
       </Boxs>
+
     </View>
   );
 };

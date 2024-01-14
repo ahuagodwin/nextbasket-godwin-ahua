@@ -12,8 +12,6 @@ const Post_Card = (props: PostProps) => {
     const postData = props.data || [];
     const postCategory = props.category || [];
 
-
-    // Rendering the post cards based on the provided data
   return (
     <>
       {postData?.map((item) => (

@@ -8,7 +8,7 @@ import {
   RatingProps,
   TypesProps,
 } from "@/types";
-import { Typography, Box, Grid,  Rating } from "@mui/material";
+import { Typography, Box, Grid, Rating } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,7 +24,7 @@ export const Padding = ({
   className,
   key,
   id,
-  styles,
+  style,
   children,
 }: TypesProps) => {
   return (
@@ -32,7 +32,7 @@ export const Padding = ({
       className={`app_padding ${className}`}
       key={key}
       id={id}
-      style={styles}
+      style={style}
     >
       {children}
     </div>
@@ -43,7 +43,7 @@ export const Container = ({
   className,
   key,
   id,
-  styles,
+  style,
   children,
 }: TypesProps) => {
   return (
@@ -51,7 +51,7 @@ export const Container = ({
       className={`app_container ${className}`}
       key={key}
       id={id}
-      style={styles}
+      style={style}
     >
       {children}
     </div>
@@ -62,11 +62,11 @@ export const Section = ({
   className,
   key,
   id,
-  styles,
+  style,
   children,
 }: TypesProps) => {
   return (
-    <section className={className} key={key} id={id} style={styles}>
+    <section className={className} key={key} id={id} style={style}>
       {children}
     </section>
   );
@@ -82,7 +82,7 @@ export const Text = (props: TypesProps) => {
       className={props.className}
       key={props.key}
       id={props.id}
-      style={props.styles}
+      style={props.style}
       {...props}
     >
       {props.children}
@@ -92,12 +92,7 @@ export const Text = (props: TypesProps) => {
 
 export const Span = (props: TypesProps) => {
   return (
-    <span
-      className={props.className}
-      key={props.key}
-      id={props.id}
-      style={props.styles}
-    >
+    <span {...props}>
       {props.children}
     </span>
   );
@@ -139,7 +134,7 @@ export const Boxs = (props: TypesProps) => {
 };
 
 export const FlexGrid = (props: TypesProps) => {
-  return <Grid {...props}>{props.children}</Grid>;
+  return <Grid className={`${props.isGrid ? props.gridType : null} ${props.isBorder ? " bordered" : null}`}>{props.children}</Grid>;
 };
 
 export const Anchor = (props: AnchorProps) => {
@@ -154,7 +149,7 @@ export const Img = (props: ImageProps) => {
   return <Image {...props} />;
 };
 
-export const ProductRating = (props: RatingProps) => {
+export const Ratings = (props: RatingProps) => {
   return (
     <Rating {...props} />
   );

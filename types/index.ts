@@ -38,6 +38,7 @@ export interface User {
     color?: string
     payload?: string;
     amount?: number
+    category?: string
 }
 
 export interface DataProps {
@@ -47,19 +48,30 @@ export interface DataProps {
 export interface PostProps {
     data?: Array<any> | null | undefined
     category?: Array<any> | null | undefined
+    loading?: boolean
 }
 
+export interface CustomStyles {
+    background?: string;
 
-export interface TypesProps {
+  }
+
+export interface TypesProps extends HTMLAttributes<HTMLDivElement> {
     className?: string,
     id?: string,
     key?: number,
-    styles?: HTMLAttributes<HTMLDivElement>,
+    style?: CustomStyles
     children?: any;
     container?: boolean,
     spacing?: number;
     item?: boolean;
     xs?: number
+    isGrid?: boolean
+    isBorder?: boolean
+    gridType?: "grid2" | "grid3" | "grid4" | "grid5" | "grid6"
+    colors?: "#23A6F0" | "#2DC071" | "#E77C40" | "#252B42" | string
+    handleClick?: MouseEventHandler<HTMLButtonElement>
+    handleCart?: MouseEventHandler<SVGSVGElement>
 }
 
 
@@ -141,4 +153,9 @@ export interface HeadingProps {
     title?: string
     desc?: string
     className?: string
+    isBorder?: boolean
 }
+
+export interface LoadingProps {
+    loading?: boolean;
+  }

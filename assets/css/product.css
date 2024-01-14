@@ -7,7 +7,7 @@
     width: 295px;
     height: 522px;
     background: var(--app-theme);
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: var(--app-card-shadow);
 }
 
 .product-card img {
@@ -21,7 +21,8 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    margin: 32px auto 56px auto;
+    margin: 32px auto 0px auto;
+    padding-bottom: 56px;
 }
 
 .product-grid {
@@ -82,7 +83,7 @@
         width: 295px;
         height: 522px;
         background: var(--app-theme);
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-shadow: var(--app-card-shadow)
     }
 
     .product-container {
@@ -91,7 +92,8 @@
         align-items: center;
         flex-direction: column;
         width: 100%;
-        margin: 32px auto 56px auto;
+        margin: 32px auto 0px auto;
+        padding-bottom: 56px;
     }
 
     .product-card img {
@@ -109,14 +111,15 @@
         align-items: center;
         flex-direction: column;
         width: 100%;
-        margin: 32px auto 56px auto;
+        margin: 32px auto 0px auto;
+        padding-bottom: 56px;
     }
 
     .product-card {
         max-width: 183px;
         height: 400px;
         background: var(--app-theme);
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-shadow: var(--app-card-shadow)
     }
 
     .product-card img {
@@ -147,14 +150,15 @@
         align-items: center;
         flex-direction: column;
         width: 100%;
-        margin: 32px auto 56px auto;
+        margin: 32px auto 0px auto;
+        padding-bottom: 56px;
     }
 
     .product-card {
         max-width: 183px;
         height: 400px;
         background: var(--app-theme);
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-shadow: var(--app-card-shadow)
     }
 
     .product-card img {
@@ -180,14 +184,15 @@
         align-items: center;
         flex-direction: column;
         width: 1092px;
-        margin: 32px auto 56px auto;
+        margin: 32px auto 0px auto;
+        padding-bottom: 56px;
     }
 
     .product-card {
         max-width: 183px;
         height: 400px;
         background: var(--app-theme);
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-shadow: var(--app-card-shadow)
     }
 
     .product-card img {

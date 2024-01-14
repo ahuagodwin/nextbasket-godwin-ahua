@@ -1,4 +1,5 @@
-import { Card, Img, View, Section, Text, Padding, Span } from "@/elements";
+import { paths } from "@/constants";
+import { Card, Img, View, Section, Text, Padding, Span, Anchor } from "@/elements";
 import { Images } from "@/public";
 import { DataProps, User } from "@/types";
 import React from "react";
@@ -10,7 +11,7 @@ const Products: React.FC<DataProps> = ({ data }) => {
         <Card key={item?.id} className="product-card">
           <Img src={item?.img ?? Images.Product1} alt="" />
           <Section className="product-content">
-            <Text className="title">{item?.name ?? "Graphic Design"}</Text>
+            <Anchor as={paths.store + `/${item?.category}` + `/${item?.id}`}><Text className="title">{item?.name ?? "Graphic Design"}</Text></Anchor>
             <Text className="desc">
               {item?.description ?? "English Department"}
             </Text>
