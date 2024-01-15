@@ -1,3 +1,5 @@
+"use client"
+
 import { CTA, Features, HeroBanner, Posts, Products, Testimonial } from "@/components";
 import { Container, Padding } from "@/elements";
 import React from "react";

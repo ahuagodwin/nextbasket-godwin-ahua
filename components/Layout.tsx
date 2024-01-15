@@ -1,4 +1,5 @@
 "use client"
+
 import { View } from '@/elements'
 import { LayoutProps } from '@/types'
 import React from 'react'

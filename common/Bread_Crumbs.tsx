@@ -1,3 +1,5 @@
+"use client"
+
 import { Icons } from "@/constants";
 import { Span, View } from "@/elements";
 import { formattedCategory, formattedTitle } from "@/utils/helper";
@@ -17,8 +19,12 @@ const Bread_Crumbs = () => {
       >
         <View>Home </View>
         <Span>Shop </Span>
-        <Span>{formattedCategory && decodeURIComponent(formattedCategory(category))}</Span>
-        <Span>{formattedTitle && decodeURIComponent(formattedTitle(title))}</Span>
+        <Span>
+        {typeof formattedCategory === 'function' && decodeURIComponent(formattedCategory(category as string))} 
+        </Span>
+        <Span>
+          {typeof formattedTitle === 'function' && decodeURIComponent(formattedTitle(title as string))}
+        </Span>
       </Breadcrumbs>
     </>
   );

@@ -1,4 +1,5 @@
 
+"use client"
 
 import { View } from '@/elements'
 import { TypesProps } from '@/types'

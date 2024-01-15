@@ -1,3 +1,6 @@
+"use client";
+
+
 import { HeroCaption } from "@/common";
 import { paths } from "@/constants";
 import {

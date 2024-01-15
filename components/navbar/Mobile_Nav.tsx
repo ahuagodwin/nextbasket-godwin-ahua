@@ -9,40 +9,35 @@ import NavbarTop from "./Navbar_Top";
 import { usePathname } from "next/navigation";
 import { datas } from "@/data";
 import { useHooks } from "@/hooks";
-import Cart from "../cart/Cart";
 import { useSelector } from "react-redux";
-import { ModalPopUp } from "@/common";
+
 import { appService } from "@/services";
+import { ModalPopUp } from "@/common";
 import Favorite from "../favorite/Favorite";
-import { Drawer } from "@mui/material";
-import MobileNav from "./Mobile_Nav"
+import Cart from "../cart/Cart";
 
 
 const Navbar = () => {
   const pathname = usePathname();
-  const { isOpen, handleOpen, isOpenLike, handleOpenLike, isFixed, handleMenuOpen, isMenu } = useHooks();
+  const { isOpen, handleOpen, isOpenLike, handleOpenLike, isFixed } = useHooks();
   const cartItems = useSelector(appService.selectCartItems);
   const favoriteItems = useSelector(appService.getAllFavorite);
 
 
-
   return (
     <>
-      <NavbarTop />
-
       <Padding>
         <Container>
           <View
-            className={`nav_container ${isFixed ? "nav-fixed" : "inherit"}`}
+            className="flex justify-center items-center flex-col w-full overflow-x-hidden"
           >
-            <View className="nav-left">Bandage</View>
-            <View className="nav-right">
-              <Section className="right-links">
+            <View className="flex justify-center items-center flex-col w-full">
+              <Section className="right-links-mobile mt-5">
                 {datas.navData.map((item, index) => {
                   return (
                     <Link
-                      className={`links ${
-                        pathname === item?.path ? "active" : "links"
+                      className={`links-mobile ${
+                        pathname === item?.path ? "active" : "links-mobile"
                       }`}
                       href={item?.path}
                       key={index}
@@ -77,7 +72,6 @@ const Navbar = () => {
                 </View>
               </Section>
             </View>
-            <Icons.MenuIcon className="nav-menu" handleCart={() => handleMenuOpen()} />
           </View>
 
           {isOpen && (
@@ -93,16 +87,6 @@ const Navbar = () => {
           )}
         </Container>
       </Padding>
-
-      {isMenu && (
-        <Drawer
-          open={isMenu}
-          onClose={handleMenuOpen}
-          anchor="top"
-        >
-          <MobileNav />
-        </Drawer>
-      )}
     </>
   );
 };

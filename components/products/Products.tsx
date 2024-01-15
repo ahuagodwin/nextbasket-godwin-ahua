@@ -1,8 +1,7 @@
 "use client";
 
 import { Heading, ProductCard } from "@/common";
-import { Icons } from "@/constants";
-import { Section, View, Button, FlexGrid } from "@/elements";
+import { View, } from "@/elements";
 import React from "react";
 
 

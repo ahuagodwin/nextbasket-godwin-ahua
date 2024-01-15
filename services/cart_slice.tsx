@@ -1,3 +1,5 @@
+"use client"
+
 // cartSlice.ts
 
 import { RootState } from '@/store/store';
@@ -16,10 +18,15 @@ interface CartState {
   items: CartItem[];
 }
 
-const STORAGE_KEY = 'godwin_ahua_cart';
+const STORAGE_KEY = 'next_cart';
+
+const getStoredItems = (): CartItem[] => {
+  const storedItems = localStorage.getItem(STORAGE_KEY);
+  return storedItems ? JSON.parse(storedItems) : [];
+};
 
 const initialState: CartState = {
-  items: JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'),
+  items: getStoredItems()
 };
 
 const cartSlice = createSlice({
@@ -45,7 +52,9 @@ const cartSlice = createSlice({
         existingItem.quantity += 1;
 
         // Update local storage
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+        if (typeof window !== 'undefined') {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+        }
       }
     },
     decreaseCart: (state, action: PayloadAction<number>) => {
@@ -61,7 +70,9 @@ const cartSlice = createSlice({
         }
 
         // Update local storage
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+        if (typeof window !== 'undefined') {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+        }
       }
     },
 
@@ -70,14 +81,19 @@ const cartSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== itemId);
 
       // Update local storage
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+      if (typeof window !== 'undefined') {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+      }
     },
 
     clearCart: (state) => {
       state.items = [];
 
       // Update local storage
-      localStorage.removeItem(STORAGE_KEY);
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+     
     },
   },
 });

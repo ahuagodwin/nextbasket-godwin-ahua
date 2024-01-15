@@ -1,3 +1,6 @@
+"use client";
+
+
 import { SubscribeButton } from '@/common'
 import { Icons } from '@/constants'
 import { datas } from '@/data'

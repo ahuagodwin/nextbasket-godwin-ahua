@@ -1,3 +1,5 @@
+"use client"
+
 import { fetchProducts } from "./product_slice";
 import { fetchSingleProducts } from "./single_product_slice";
 import {

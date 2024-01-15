@@ -1,3 +1,6 @@
+"use client";
+
+
 import { Button, Img, Section, Span, Text, View } from '@/elements'
 import { Images } from '@/public'
 import React from 'react'

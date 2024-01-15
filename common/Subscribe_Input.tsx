@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, CustomInput, View } from "@/elements";
 import React from "react";
 

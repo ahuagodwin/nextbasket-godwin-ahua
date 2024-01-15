@@ -1,3 +1,5 @@
+"use client";
+
 import { Img, View } from "@/elements";
 import { Images } from "@/public";
 

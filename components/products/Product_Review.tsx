@@ -1,3 +1,6 @@
+
+"use client";
+
 import { datas } from '@/data'
 import { Boxs, Container, FlexGrid, Img, Padding, Section, Span, Text, View } from '@/elements'
 import { Images } from '@/public'

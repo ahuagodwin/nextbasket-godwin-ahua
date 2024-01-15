@@ -1,4 +1,4 @@
-
+"use client";
 
 import { ImageLoader, StaticImageData } from "next/image";
 import React, { HTMLAttributes, MouseEventHandler, ReactNode, SVGAttributes, SyntheticEvent } from "react"

@@ -67,6 +67,15 @@
     width: 900px;
 }
 
+.right-links-mobile .links-mobile {
+    margin: 0 5px;
+    color: var(--app-gray);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+}
+
 .right-links .links {
     margin: 0 15px;
     color: var(--app-gray);

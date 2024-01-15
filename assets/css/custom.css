@@ -54,17 +54,19 @@
 
 .tag-line {
   display: flex;
-  justify-content: flex-start !important;
-  align-items: flex-start !important;
-  text-align: left !important;
-  font-weight: 700;
-  font-size: 24px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  font-weight: 700 !important;
+  font-size: 24px !important;
   line-height: 32px;
   letter-spacing: 0.2px;
-  color: var(--app-primary);
+  color: var(--app-primary) !important;
+  width: 1042px;
+  border-bottom: 2px solid var(--app-border);
+  margin-bottom: 24px !important;
   padding-bottom: 24px;
-  padding-left: 24px;
-  width: 100%;
+  margin: auto;
 }
 
 .bordered {
@@ -100,6 +102,17 @@
   height: 200px;
 }
 
+
+.brand-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50px;
+  margin: auto;
+  gap: 20px;
+  padding: 10px 0;
+} 
 
   /* media responsiveness across devices  */
   @media (min-width: 480px) {

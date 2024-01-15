@@ -1,4 +1,4 @@
-
+"use client";
 
 export { default as MainLayout } from './Layout'
 export { default as HeroBanner } from "./hero/Hero"

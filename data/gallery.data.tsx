@@ -1,3 +1,5 @@
+"use client";
+
 import { Images } from "@/public";
 
 export const galleryData = [

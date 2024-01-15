@@ -1,3 +1,5 @@
+"use client";
+
 import { Anchor, Boxs, Span, Text } from "@/elements";
 import { HeroProps } from "@/types";
 import React from "react";

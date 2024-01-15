@@ -1,3 +1,5 @@
+"use client";
+
 import { Boxs, Section, Text, View } from "@/elements";
 import { ModalProps } from "@/types";
 import React from "react";

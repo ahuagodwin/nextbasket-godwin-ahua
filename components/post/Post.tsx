@@ -1,3 +1,5 @@
+"use client";
+
 import { PostCard } from "@/common";
 import { datas } from "@/data";
 import { Boxs, Section, Span, Text, View } from "@/elements";

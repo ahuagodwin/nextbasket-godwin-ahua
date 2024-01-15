@@ -1,4 +1,4 @@
-
+"use client";
 
 // hero images
 import Hero1 from "./hero1.png"

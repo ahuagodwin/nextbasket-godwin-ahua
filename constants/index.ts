@@ -1,4 +1,6 @@
 
+"use client";
+
 
 import { Icons } from "./Icons";
 import { Images } from "@/public";

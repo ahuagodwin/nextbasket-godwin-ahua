@@ -1,3 +1,6 @@
+"use client";
+
+
 import { Icons } from '@/constants'
 import { Container, Padding, Section, Span, Text, View } from '@/elements'
 import React from 'react'

@@ -1,3 +1,5 @@
+"use client"
+
 import { publicRequest } from "@/config/connect";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 

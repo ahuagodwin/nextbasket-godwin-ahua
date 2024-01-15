@@ -1,3 +1,5 @@
+"use client";
+
 import { Icons } from "@/constants";
 import { Boxs, Button, Img, Section, Text, View } from "@/elements";
 import { appService } from "@/services";

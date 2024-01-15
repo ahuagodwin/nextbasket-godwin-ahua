@@ -1,3 +1,5 @@
+"use client"
+
 // cartSlice.ts
 
 import { RootState } from '@/store/store';
@@ -16,10 +18,15 @@ interface FavoriteState {
   items: FavoriteItem[];
 }
 
-const STORAGE_KEY = 'godwin_ahua_like';
+const STORAGE_KEY = 'next_like';
+
+const getStoredItems = (): FavoriteItem[] => {
+  const storedItems = localStorage.getItem(STORAGE_KEY);
+  return storedItems ? JSON.parse(storedItems) : [];
+};
 
 const initialState: FavoriteState = {
-  items: JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'),
+  items: getStoredItems()
 };
 
 const favoriteSlice = createSlice({
@@ -35,7 +42,10 @@ const favoriteSlice = createSlice({
       } else {
         state.items.push({ id, name, price, quantity, thumbnail, description});
       }
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+       // Update local storage
+       if (typeof window !== 'undefined') {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+      }
     },
 
     deleteFavoriteItem: (state, action: PayloadAction<number>) => {
@@ -43,14 +53,19 @@ const favoriteSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== itemId);
 
       // Update local storage
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+      // Update local storage
+      if (typeof window !== 'undefined') {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
+      }
     },
 
     clearWhist: (state) => {
       state.items = [];
-
-      // Update local storage
-      localStorage.removeItem(STORAGE_KEY);
+      
+       // Update local storage
+       if (typeof window !== 'undefined') {
+        localStorage.removeItem(STORAGE_KEY);
+      }
     },
   },
 });

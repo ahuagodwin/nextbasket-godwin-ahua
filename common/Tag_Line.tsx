@@ -1,3 +1,6 @@
+"use client";
+
+
 import { Text } from '@/elements'
 import { HeadingProps } from '@/types'
 import React from 'react'
