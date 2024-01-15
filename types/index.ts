@@ -85,7 +85,7 @@ export interface ButtonProps {
     key?: number;
     title?: string,
     htmlType?: "button" | "submit" | "reset" | undefined
-    stylesType?: "primary" | "secondary" | undefined
+    stylestype?: "primary" | "secondary" | undefined
     size?: "small" | "large" | "medium" | "small-x" | "medium-x" | undefined
     handleClick?: MouseEventHandler<HTMLButtonElement>
     icon?: SVGAttributes<SVGAElement>;
@@ -100,7 +100,7 @@ export interface InputProps {
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     className?: string;
     key?: number;
-    stylesType?: "primary" | "secondary" | "default" | undefined
+    stylestype?: "primary" | "secondary" | "default" | undefined
     variant?: "standard" | "filled" | "outlined"
     styleSize?: "small" | "medium" | "large" | "small-x" | "medium-x";
     onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;

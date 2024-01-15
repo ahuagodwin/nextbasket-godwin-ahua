@@ -6,11 +6,11 @@ import React from "react";
 const Subscribe_Input = () => {
   return (
     <View className="footer-subscribe">
-      <CustomInput placeholder="Email Address" styleSize="medium" stylesType="default" />
+      <CustomInput placeholder="Email Address" styleSize="medium" stylestype="default" />
       <Button
         title="Subscribe"
         htmlType="submit"
-        stylesType="secondary"
+        stylestype="secondary"
         size="small-x"
       />
     </View>

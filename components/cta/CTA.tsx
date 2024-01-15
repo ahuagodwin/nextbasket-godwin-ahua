@@ -16,7 +16,7 @@ const CTA = () => {
             <Span className='desc'>Problems trying to resolve the conflict between the two major realms of Classical physics: </Span>
             <Text className='price'>$16.48</Text>
 
-            <Button title='ADD YOUR CALL TO ACTION' stylesType='secondary' size='large'/>
+            <Button title='ADD YOUR CALL TO ACTION' stylestype='secondary' size='large'/>
         </Section>
     </View>
   )

@@ -101,7 +101,7 @@ export const Span = (props: TypesProps) => {
 export const Button = (props: ButtonProps) => {
   return (
     <button
-      className={props.stylesType}
+      className={props.stylestype}
       key={props.key}
       id={props.size}
       type={props.htmlType}
@@ -120,7 +120,7 @@ export const Button = (props: ButtonProps) => {
 export const CustomInput = (props: InputProps) => {
   return (
     <input
-      className={props.stylesType}
+      className={props.stylestype}
       type={props.htmlType}
       id={props.styleSize}
       onChange={props.onChange}

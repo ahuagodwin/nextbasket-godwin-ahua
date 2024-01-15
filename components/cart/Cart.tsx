@@ -58,9 +58,9 @@ const Cart = () => {
         ))}
   
         <View className="cart-clear-btn">
-          <Button  handleClick={() => handleClearCart()} title="Clear Cart" stylesType="secondary" size="medium-x" /> 
-          <Button title={`Total: ${formatAmount(calculateTotal().toFixed(2))}`}  stylesType="secondary"  size="medium-x"  /> 
-          <Anchor as={paths.home}><Button title="Continue Shopping" stylesType="secondary"  size="medium-x"  /> </Anchor>
+          <Button  handleClick={() => handleClearCart()} title="Clear Cart" stylestype="secondary" size="medium-x" /> 
+          <Button title={`Total: ${formatAmount(calculateTotal().toFixed(2))}`}  stylestype="secondary"  size="medium-x"  /> 
+          <Anchor as={paths.home}><Button title="Continue Shopping" stylestype="secondary"  size="medium-x"  /> </Anchor>
         </View>
       </Boxs>
       ) }
