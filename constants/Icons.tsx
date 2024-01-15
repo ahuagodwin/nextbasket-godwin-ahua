@@ -21,8 +21,9 @@ import {
   LikeIcon,
   MoreIcon
 } from "@/assets/icons/icons";
-import { FaSpinner as Spinner } from "react-icons/fa";
-
+import { FaSpinner as Spinner, } from "react-icons/fa";
+import { FaRegSquarePlus as PlusIcon, FaRegSquareMinus as MinusIcon } from "react-icons/fa6";
+import { MdDeleteForever as DeleteIcon } from "react-icons/md";
 
 
 export const Icons = {
@@ -47,5 +48,8 @@ export const Icons = {
   ArrowRight,
   BasketIcon,
   LikeIcon,
-  MoreIcon
+  MoreIcon,
+  PlusIcon,
+  MinusIcon,
+  DeleteIcon
 };

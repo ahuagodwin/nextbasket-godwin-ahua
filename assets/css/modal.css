@@ -1,0 +1,64 @@
+
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 21;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+
+.modal-body {
+    width: 700px;
+    height: 400px;
+    background: var(--app-theme);
+    border-radius: 8px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal-close {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.modal-close p {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-right: -18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--app-primary);
+    color: var(--app-theme);
+    cursor: pointer;
+}
+
+.modal-title {
+    padding: 20px 0px;
+    width: 100%;
+    background: var(--app-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--app-theme);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.2px;
+}

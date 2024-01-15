@@ -1,11 +1,12 @@
 import { Icons } from "@/constants";
 import { Span, View } from "@/elements";
+import { formattedCategory, formattedTitle } from "@/utils/helper";
 import { Breadcrumbs } from "@mui/material";
 import { useParams } from "next/navigation";
 import React from "react";
 
 const Bread_Crumbs = () => {
-  const { id, category } = useParams();
+  const { title, category } = useParams();
 
   return (
     <>
@@ -16,7 +17,8 @@ const Bread_Crumbs = () => {
       >
         <View>Home </View>
         <Span>Shop </Span>
-        <Span>{category}</Span> <Span>{id}</Span>
+        <Span>{formattedCategory && decodeURIComponent(formattedCategory(category))}</Span>
+        <Span>{formattedTitle && decodeURIComponent(formattedTitle(title))}</Span>
       </Breadcrumbs>
     </>
   );

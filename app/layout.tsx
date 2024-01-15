@@ -1,6 +1,9 @@
+
 import type { Metadata } from 'next'
 import './globals.css'
 import { MainLayout } from '@/components'
+import { Providers } from './provider'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
 export const metadata: Metadata = {
@@ -16,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Providers>
         <MainLayout>
             {children}
         </MainLayout>
+        </Providers>
       </body>
     </html>
   )

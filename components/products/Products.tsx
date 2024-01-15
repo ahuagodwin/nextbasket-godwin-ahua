@@ -2,12 +2,31 @@
 
 import { Heading, ProductCard } from "@/common";
 import { Icons } from "@/constants";
-import { datas } from "@/data";
 import { Section, View, Button, FlexGrid } from "@/elements";
-import React from "react";
+import { appService } from "@/services";
+import { AppDispatch, RootState } from "@/store/store";
+import React, { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const AllProducts = () => {
-  const sampleData = datas.product;
+  const userRef = useRef(false)
+  const data  = useSelector((state: RootState) => state.products)
+  const dispatch = useDispatch<AppDispatch>()
+
+
+ useEffect(() => {
+    if(userRef.current === false) {
+      dispatch(appService.fetchProducts());
+    }
+    return () => {
+      userRef.current === true
+    }
+ },[])
+
+ const allProducts = data?.products?.products
+
+ console.log(" all products:", allProducts)
+
   return (
     <View className="product-container">
       <Heading
@@ -17,7 +36,7 @@ const AllProducts = () => {
         className="mb-[56px]"
       />
           <FlexGrid isGrid={true} gridType="grid5" isBorder={false}>
-              <ProductCard data={sampleData} />
+              <ProductCard data={allProducts} />
           </FlexGrid>
 
 

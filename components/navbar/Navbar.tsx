@@ -7,25 +7,19 @@ import React, { useEffect } from "react";
 import NavbarTop from "./Navbar_Top";
 import { usePathname } from "next/navigation";
 import { datas } from "@/data";
+import { useHooks } from "@/hooks";
+import Cart from "../cart/Cart";
+import { useSelector } from "react-redux";
+
+import { ModalPopUp } from "@/common";
+import { appService } from "@/services";
 
 const Navbar = () => {
     const pathname = usePathname()
-    const [ isFixed, setIsFixed] = React.useState<boolean>(false)
-    
-    useEffect(() => {
-      const handleScroll = () => {
-        const scrollY = window.scrollY;
-        const triggerHeight = 100;
-  
-        setIsFixed(scrollY > triggerHeight);
-      };
-  
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
+    const { isFixed } = useHooks()
+    const { isOpen, handleOpen } = useHooks();
+    const cartItems = useSelector(appService.selectCartItems);
+    const favoriteItems = useSelector(appService.getAllFavorite)
 
   return (
     <>
@@ -50,13 +44,23 @@ const Navbar = () => {
                         </View>
                         <View className="right-inner-icon">
                             <Span className="space-x-2"><Icons.SearchIcon /></Span>
-                            <Span className="space-x-2"><Icons.CartIcon /> 1</Span>
-                            <Span className="space-x-2"><Icons.FavoriteIcon/> 1</Span>
+                            <Span className="space-x-2 cursor-pointer" onClick={() => handleOpen()}><Icons.CartIcon/>{cartItems.length ?? 0}</Span>
+                            <Span className="space-x-2"><Icons.FavoriteIcon/> {favoriteItems.length ?? 0 }</Span>
                         </View>
                     </Section>
                 </View>
             <Icons.MenuIcon className="nav-menu" />
           </View>
+
+          {isOpen && (
+              
+                <ModalPopUp
+                open={isOpen} close={() => handleOpen()}    
+                >
+                    <Cart />
+                </ModalPopUp>
+
+      )}
         </Container>
       </Padding>
     </>

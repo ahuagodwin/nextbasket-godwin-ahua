@@ -1,7 +1,7 @@
 
 
 import { ImageLoader, StaticImageData } from "next/image";
-import React, { HTMLAttributes, MouseEventHandler, SVGAttributes, SyntheticEvent } from "react"
+import React, { HTMLAttributes, MouseEventHandler, ReactNode, SVGAttributes, SyntheticEvent } from "react"
 import type { UrlObject } from 'url';
 type Url = string | UrlObject;
 
@@ -15,7 +15,7 @@ export interface ImageProps {
     src: string | StaticImageData;
     alt: string;
     width?: number | `${number}` | undefined;
-    height?: number | `${number}` | undefined;
+    height?: number | `${number}` |  undefined;
     fill?: boolean | undefined;
     loader?: ImageLoader | undefined;
     quality?: number | `${number}` | undefined;
@@ -33,11 +33,15 @@ export interface ImageProps {
 export interface User {
     id?: number;
     name?: string;
+    title?: string;
     description?: string;
     img?: string | StaticImageData;
+    thumbnail?: string | StaticImageData;
     color?: string
     payload?: string;
     amount?: number
+    price?: number
+    discountPercentage?: number
     category?: string
 }
 
@@ -138,7 +142,7 @@ export interface HeroProps {
 
 
 export interface RatingProps {
-    readonly?: boolean;
+    readOnly?: boolean;
     name?: "simple-controlled" | "read-only" | "disabled" | "no-value"
     disabled?: boolean
     value?: number | null | undefined;
@@ -158,4 +162,10 @@ export interface HeadingProps {
 
 export interface LoadingProps {
     loading?: boolean;
+  }
+
+  export interface ModalProps {
+    open?: boolean;
+    close?: () => void;
+    children?: ReactNode
   }
