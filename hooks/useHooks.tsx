@@ -1,18 +1,21 @@
-"use client";
+"use client"
 
 import React, { useEffect, useState } from 'react';
 
 const useHooks = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [isMenu, setIsMenu] = React.useState<boolean>(false);
-  const [isOpenLike, setIsOpenLike] = React.useState<boolean>(false);
-  const [isFixed, setIsFixed] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isMenu, setIsMenu] = useState<boolean>(false);
+  const [isOpenLike, setIsOpenLike] = useState<boolean>(false);
+  const [isFixed, setIsFixed] = useState<boolean>(false);
 
   // a state to track window width
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number>(
+    typeof window !== 'undefined' ? window.innerWidth : 0
+  );
 
   // modal overlay and inner width
   useEffect(() => {
+    if (typeof window === 'undefined') return; // Check if running on the server
     const originalOverflow = document.body.style.overflow;
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
@@ -48,6 +51,7 @@ const useHooks = () => {
 
   // handling of the navigation bar fixed on scroll
   useEffect(() => {
+    if (typeof window === 'undefined') return; // Check if running on the server
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const triggerHeight = 100;
@@ -70,19 +74,18 @@ const useHooks = () => {
 
   // Close menu when switching to desktop view
   useEffect(() => {
+    if (typeof window === 'undefined') return; // Check if running on the server
     const desktopBreakpoint = 768;
     if (windowWidth >= desktopBreakpoint && isMenu) {
       setIsMenu(false);
     }
   }, [windowWidth, isMenu]);
 
-
   useEffect(() => {
     if (isOpen || isOpenLike) {
       setIsMenu(false);
     }
   }, [isOpen, isOpenLike]);
-  
 
   return {
     isOpen,

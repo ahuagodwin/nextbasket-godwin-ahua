@@ -21,8 +21,11 @@ interface CartState {
 const STORAGE_KEY = 'next_cart';
 
 const getStoredItems = (): CartItem[] => {
-  const storedItems = localStorage.getItem(STORAGE_KEY);
-  return storedItems ? JSON.parse(storedItems) : [];
+  if (typeof window !== 'undefined') {
+    const storedItems = localStorage.getItem(STORAGE_KEY);
+    return storedItems ? JSON.parse(storedItems) : [];
+  }
+  return [];
 };
 
 const initialState: CartState = {
