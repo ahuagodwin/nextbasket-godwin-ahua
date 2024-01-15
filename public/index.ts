@@ -45,6 +45,8 @@ import MobileCTA from "./mobile-cta.png"
 
 import EmptyData from "./noData.png"
 
+import CartItemImg from "./card-item.png"
+
 export const Images = {
     Hero1,
     Hero2,
@@ -75,5 +77,6 @@ export const Images = {
     Designer,
     CTABg,
     MobileCTA,
-    EmptyData 
+    EmptyData,
+    CartItemImg 
 }

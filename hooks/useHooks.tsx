@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 
 const useHooks = () => {
     const [ isOpen, setIsOpen ] = React.useState<boolean>(false)
+    const [ isOpenLike, setIsOpenLike ] = React.useState<boolean>(false)
     const [ isFixed, setIsFixed] = React.useState<boolean>(false)
 
     // modal overlay and inner width
@@ -11,7 +12,7 @@ const useHooks = () => {
       const originalOverflow = document.body.style.overflow;
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
   
-      if (isOpen) {
+      if (isOpen || isOpenLike) {
         document.body.style.overflow = 'hidden';
         document.body.style.marginRight = `${scrollbarWidth}px`;
       } else {
@@ -24,12 +25,16 @@ const useHooks = () => {
         document.body.style.overflow = originalOverflow;
         document.body.style.marginRight = '0';
       };
-    }, [isOpen]);
+    }, [isOpen, isOpenLike]);
 
 
     const handleOpen = () => {
         setIsOpen(!isOpen)
     }
+
+    const handleOpenLike = () => {
+      setIsOpenLike(!isOpenLike)
+  }
 
 
     // handling of the navigation bar fixed on scroll
@@ -51,7 +56,9 @@ const useHooks = () => {
   return {
     isOpen,
     handleOpen,
-    isFixed
+    isFixed,
+    handleOpenLike,
+    isOpenLike
   }
 }
 

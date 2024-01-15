@@ -7,6 +7,7 @@ import { Container, FlexGrid, Padding, Section, View, Img, Text,  Ratings, Span,
 import { Images } from '@/public';
 import { appService } from '@/services';
 import { AppDispatch, RootState } from '@/store/store';
+import { formatAmount } from '@/utils/helper';
 import { useParams } from 'next/navigation'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
@@ -46,12 +47,13 @@ const Single_Products = () => {
                 <FlexGrid isGrid={true} gridType="grid2" isBorder={false}>
                         <Section className='single-prd-left'>
                             <Img src={data?.thumbnail ?? Images.Hero1} alt="" width={100} height={100} />
+                            
                         </Section>
                         <Section className='single-prd-right'>
                             <Text className='single-name'>{data?.title}</Text>
                             <Span className='single-rating'><Ratings value={data?.rating} name="read-only" readOnly/> {data?.rating} Reviews</Span>
 
-                            <Text className='single-price'><Span>${data?.discountPercentage}</Span> ${data?.price}</Text>
+                            <Text className='single-price'><Span>{formatAmount(data?.discountPercentage)}</Span> {formatAmount(data?.price)}</Text>
                             <Text className='single-stock'>Availability: <Span>{data?.stock} In Stock</Span></Text>
                             <Text className="single-desc">{data?.description}</Text>
                             <Boxs className='single-colors'> 

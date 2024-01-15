@@ -11,7 +11,7 @@ const PopUp_Modal = (props: ModalProps) => {
             <Section className="modal-close">
               <Text onClick={props.close}>X</Text>
             </Section>
-            <Boxs className="modal-title">Cart Item</Boxs>
+            <Boxs className="modal-title">{props.title}</Boxs>
             <View className="modal-content">{props.children}</View>
           </Boxs>
         </View>

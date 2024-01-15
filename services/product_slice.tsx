@@ -13,11 +13,12 @@ export const fetchProducts = createAsyncThunk('/all/products', async (_, { rejec
 })
 
 
+
 const initialState = {
   products: [],
   loading: false,
   error: null,
-  isSuccess: null,
+  isSuccess: false,
 } as any;
 
 const productsSlice = createSlice({
@@ -34,7 +35,7 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.loading = false;
         state.error = false;
-        state.isSuccess = action.payload;
+        state.isSuccess = true;
         state.products = action.payload;
       })
 

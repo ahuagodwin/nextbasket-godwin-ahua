@@ -24,8 +24,13 @@
     height: 400px;
     background: var(--app-theme);
     border-radius: 8px;
-    padding: 20px;
     overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    padding: 20px;
+    max-width: 700px;
 }
 
 .modal-close {
@@ -39,8 +44,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
-    margin-right: -18px;
+    margin-bottom: 20px;
+    margin-right: -5px;
     width: 40px;
     height: 40px;
     border-radius: 50%;

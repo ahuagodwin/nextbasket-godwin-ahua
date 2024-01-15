@@ -4,7 +4,7 @@ import { navData, FooterData } from "./nav.data";
 import { product } from "./product.data"
 import { galleryData } from "./gallery.data"
 import { postCategory, postData } from "./post.data";
-import { colors } from "./single.data"
+import { colors,  tabData  } from "./single.data"
 
 
 export const datas = {
@@ -14,5 +14,6 @@ export const datas = {
     galleryData,
     postCategory, 
     postData,
-    colors
+    colors,
+    tabData 
 }

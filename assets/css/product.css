@@ -7,7 +7,7 @@
     width: 295px;
     height: 522px;
     background: var(--app-theme);
-    box-shadow: var(--app-card-shadow);
+    ;
 }
 
 .product-card-img {
@@ -82,7 +82,7 @@
         width: 295px;
         height: 522px;
         background: var(--app-theme);
-        box-shadow: var(--app-card-shadow)
+        
     }
 
     .product-container {
@@ -118,7 +118,7 @@
         max-width: 183px;
         height: 400px;
         background: var(--app-theme);
-        box-shadow: var(--app-card-shadow)
+        
     }
 
     .product-card img {
@@ -153,7 +153,7 @@
         max-width: 183px;
         height: 400px;
         background: var(--app-theme);
-        box-shadow: var(--app-card-shadow)
+        
     }
 
     .product-card img {
@@ -187,7 +187,7 @@
         max-width: 183px;
         height: 400px;
         background: var(--app-theme);
-        box-shadow: var(--app-card-shadow)
+        
     }
 
     .product-card img {

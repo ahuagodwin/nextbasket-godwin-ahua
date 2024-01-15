@@ -14,3 +14,19 @@ export  const colors = [
         color: "#252B42"
     }
 ]
+
+
+export const tabData = [
+    {
+      item: "Description",
+    },
+
+    {
+      item: "Additional Information",
+    },
+
+    {
+      item: `Review (0)`,
+    },
+
+  ]

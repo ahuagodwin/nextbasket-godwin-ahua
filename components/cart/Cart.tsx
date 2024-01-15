@@ -1,8 +1,8 @@
-import { Icons } from "@/constants";
-import { Boxs, Button, Img, Section, Text, View } from "@/elements";
+import { Icons, paths } from "@/constants";
+import { Anchor, Boxs, Button, Img, Section, Text, View } from "@/elements";
 import { appService } from "@/services";
 import { AppDispatch } from "@/store/store";
-import { nodata } from "@/utils/helper";
+import { formatAmount, nodata } from "@/utils/helper";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -26,6 +26,9 @@ const Cart = () => {
     dispatch(appService.clearCart())
   }
 
+  const calculateTotal = () => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
 
   return (
     <>
@@ -45,16 +48,16 @@ const Cart = () => {
               <View className="cart-actions">
                 <Icons.MinusIcon size={20} onClick={() => handleDecQty(item?.id)} /> {item.quantity} <Icons.PlusIcon size={20} onClick={() => handleIncQty(item?.id)} />
               </View>
-               <Text>${item.price * item?.quantity} </Text>
+               <Text>{formatAmount(item.price * item?.quantity)} </Text>
   
                <Icons.DeleteIcon  color="#e74040" size={30} onClick={() => handleDelItem(item?.id)} />
           </View>
         ))}
   
         <View className="cart-clear-btn">
-          <Button  handleClick={() => handleClearCart()} title="Clear Cart" stylesType="secondary" size="small" /> 
-          <Button title="Total" stylesType="secondary"  size="small"  /> 
-          <Button title="Check Out" stylesType="secondary"  size="small"  /> 
+          <Button  handleClick={() => handleClearCart()} title="Clear Cart" stylesType="secondary" size="medium-x" /> 
+          <Button title={`Total: ${formatAmount(calculateTotal().toFixed(2))}`}  stylesType="secondary"  size="medium-x"  /> 
+          <Anchor as={paths.home}><Button title="Continue Shopping" stylesType="secondary"  size="medium-x"  /> </Anchor>
         </View>
       </Boxs>
       ) }
