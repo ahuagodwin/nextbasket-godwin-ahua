@@ -47,6 +47,15 @@ import EmptyData from "./noData.png"
 
 import CartItemImg from "./card-item.png"
 
+import Brand1 from "./partners/brand1.png"
+import Brand2 from "./partners/brand2.png"
+import Brand3 from "./partners/brand3.png"
+import Brand4 from "./partners/brand4.png"
+import Brand5 from "./partners/brand5.png"
+import Brand6 from "./partners/brand6.png"
+
+
+
 export const Images = {
     Hero1,
     Hero2,
@@ -78,5 +87,11 @@ export const Images = {
     CTABg,
     MobileCTA,
     EmptyData,
-    CartItemImg 
+    CartItemImg,
+    Brand1,
+    Brand2,
+    Brand3,
+    Brand4,
+    Brand5,
+    Brand6
 }
