@@ -12,17 +12,17 @@ import { toast } from "react-toastify";
 const Favorite = () => {
   const favoriteItems = useSelector(appService.getAllFavorite);
   const dispatch = useDispatch<AppDispatch>(); 
-  const [ successMsg, setSuccessMsg ] = React.useState<string>('')
+
 
 
   const handleDelItem = (itemId: number) => {
     dispatch(appService.deleteFavoriteItem(itemId))
-    toast("Favorite item deleted")
+    toast.success("Favorite item deleted")
   }
 
   const handleClearCart = () => {
     dispatch(appService.clearWhist())
-    toast("Favorite item cleared")
+    toast.success("Favorite item cleared")
   }
 
 

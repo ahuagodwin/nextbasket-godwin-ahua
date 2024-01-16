@@ -11,7 +11,7 @@ import { formatAmount } from '@/utils/helper';
 import { useParams } from 'next/navigation'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Toaster, toast } from 'sonner';
+import { toast } from 'react-toastify';
 
 const Single_Products = () => {
     const { id } = useParams();
@@ -30,13 +30,13 @@ const Single_Products = () => {
     const handleAddToCart = () => {
         const { id, title, price, thumbnail, description } = data;
         dispatch(appService.addToCart({ id, name: title, price, quantity: 1, thumbnail, description }));
-        toast("Cart added successfully")
+        toast.success("Cart added successfully")
       };
 
       const handleAddToWhist = () => {
         const { id, title, price, thumbnail, description } = data;
         dispatch(appService.addToWhist({ id, name: title, price, quantity: 1, thumbnail, description }));
-        toast("Added to favorites");
+        toast.success("Added to favorites");
       };
 
 
@@ -90,7 +90,6 @@ const Single_Products = () => {
     </View>
 
 
-<Toaster richColors />
     </>
   )
 }

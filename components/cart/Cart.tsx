@@ -8,34 +8,34 @@ import { formatAmount, nodata } from "@/utils/helper";
 
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Toaster, toast } from "sonner";
+import { toast } from "react-toastify";
 
 const Cart: React.FC = () => {
   const cartItems = useSelector(appService.selectCartItems);
   const dispatch = useDispatch<AppDispatch>();
-  const [ successMsg, setSuccessMsg ] = React.useState<string>('')
+
 
 
   const handleDecQty = (itemId: number) => {
     dispatch(appService.decreaseCart(itemId))
-    toast("Decrease Quantity")
+    toast.success("Decrease Quantity")
 
   }
 
   const handleIncQty = (itemId: number) => {
     dispatch(appService.increaseCart(itemId))
-    toast("Increased quantity")
+    toast.success("Increased quantity")
   }
 
   const handleDelItem = (itemId: number) => {
     dispatch(appService.deleteCartItem(itemId))
-    toast("Successfully deleted")
+    toast.success("Successfully deleted")
 
   }
 
   const handleClearCart = () => {
     dispatch(appService.clearCart())
-    toast("Successfully deleted")
+    toast.success("Successfully deleted")
   }
 
   const calculateTotal = () => {
@@ -72,8 +72,6 @@ const Cart: React.FC = () => {
         </View>
       </Boxs>
       ) }
-
-<Toaster richColors />
     </>
 
   );
