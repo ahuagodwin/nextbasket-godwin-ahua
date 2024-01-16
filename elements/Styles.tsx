@@ -107,11 +107,6 @@ export const Button = (props: ButtonProps) => {
       type={props.htmlType}
       onClick={props.handleClick}
     >
-      {props.loading ? (
-        <Span id="spin">{props.icon}</Span>
-      ) : (
-        props.icon && <Span>{props.icon}</Span>
-      )}
       {props.title}
     </button>
   );
