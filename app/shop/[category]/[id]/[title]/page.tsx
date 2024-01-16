@@ -15,7 +15,7 @@ const page = () => {
 
         <View className="product-container">
           <TagLine title="BESTSELLER PRODUCTS" />
-          <ProductCard />
+          <ProductCard displayButton={false} sliceAmount={30}/>
         </View>
 
         <Brands />

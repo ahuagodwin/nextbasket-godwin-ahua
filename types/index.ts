@@ -170,3 +170,10 @@ export interface LoadingProps {
     children?: ReactNode
     title?: string
   }
+
+
+
+export interface ProductsProps {
+    displayButton: boolean;
+    sliceAmount: number;
+  }

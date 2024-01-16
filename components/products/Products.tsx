@@ -15,7 +15,7 @@ const AllProducts = () => {
         desc="Problems trying to resolve the conflict between "
         className="mb-[56px]"
       />
-          <ProductCard/>
+          <ProductCard displayButton={true} sliceAmount={10}/>
     </View>
   );
 };

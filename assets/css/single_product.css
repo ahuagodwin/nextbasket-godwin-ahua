@@ -227,8 +227,6 @@
     color: var(--app-gray);
     letter-spacing: 0.2px;
     height: 119px;
-    margin: auto;
-    padding: auto;
 }
 
 .single-colors {
