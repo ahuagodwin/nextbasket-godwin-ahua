@@ -62,7 +62,7 @@
   line-height: 32px;
   letter-spacing: 0.2px;
   color: var(--app-primary) !important;
-  width: 1042px;
+  width: 100%;
   border-bottom: 2px solid var(--app-border);
   margin-bottom: 24px !important;
   padding-bottom: 24px;
@@ -160,5 +160,22 @@
   @media (min-width: 1280px) {
     .app_container {
       max-width: 1146px;
+    }
+
+    .tag-line {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+      font-weight: 700 !important;
+      font-size: 24px !important;
+      line-height: 32px;
+      letter-spacing: 0.2px;
+      color: var(--app-primary) !important;
+      width: 1042px;
+      border-bottom: 2px solid var(--app-border);
+      margin-bottom: 24px !important;
+      padding-bottom: 24px;
+      margin: auto;
     }
   }
