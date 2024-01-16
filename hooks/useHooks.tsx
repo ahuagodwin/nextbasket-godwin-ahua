@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useEffect, useState } from 'react';
 
 const useHooks = () => {
@@ -7,15 +5,12 @@ const useHooks = () => {
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const [isOpenLike, setIsOpenLike] = useState<boolean>(false);
   const [isFixed, setIsFixed] = useState<boolean>(false);
-
-  // a state to track window width
   const [windowWidth, setWindowWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
 
-  // modal overlay and inner width
+  // Modal overlay and inner width
   useEffect(() => {
-    if (typeof window === 'undefined') return; // Check if running on the server
     const originalOverflow = document.body.style.overflow;
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
@@ -34,28 +29,11 @@ const useHooks = () => {
     };
   }, [isOpen, isOpenLike]);
 
-  // function to open the mobile nav menu
-  const handleMenuOpen = () => {
-    setIsMenu(!isMenu);
-  };
-
-  // function to open the cart popup modal
-  const handleOpen = () => {
-    setIsOpen(!isOpen);
-  };
-
-  // function to open the favorite popup modal
-  const handleOpenLike = () => {
-    setIsOpenLike(!isOpenLike);
-  };
-
-  // handling of the navigation bar fixed on scroll
+  // Handling of the navigation bar fixed on scroll
   useEffect(() => {
-    if (typeof window === 'undefined') return; // Check if running on the server
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const triggerHeight = 100;
-
       setIsFixed(scrollY > triggerHeight);
     };
 
@@ -66,6 +44,7 @@ const useHooks = () => {
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
 
+    // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
@@ -74,7 +53,6 @@ const useHooks = () => {
 
   // Close menu when switching to desktop view
   useEffect(() => {
-    if (typeof window === 'undefined') return; // Check if running on the server
     const desktopBreakpoint = 768;
     if (windowWidth >= desktopBreakpoint && isMenu) {
       setIsMenu(false);
@@ -86,6 +64,21 @@ const useHooks = () => {
       setIsMenu(false);
     }
   }, [isOpen, isOpenLike]);
+
+  // Function to open the mobile nav menu
+  const handleMenuOpen = () => {
+    setIsMenu(!isMenu);
+  };
+
+  // Function to open the cart popup modal
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Function to open the favorite popup modal
+  const handleOpenLike = () => {
+    setIsOpenLike(!isOpenLike);
+  };
 
   return {
     isOpen,
