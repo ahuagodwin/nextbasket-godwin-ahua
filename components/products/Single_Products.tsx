@@ -63,7 +63,7 @@ const Single_Products = () => {
                             </Boxs>
 
                             <Boxs className='single-cart'>
-                                <Button title='selected options' stylesType='secondary' size='small' />
+                                <Button title='selected options' stylestype='secondary' size='small' />
                                 <Icons.LikeIcon handleCart={() => handleAddToWhist()} />
                                 {/* add to cart button */}
                                 <Icons.BasketIcon handleCart={() => handleAddToCart()} /> 

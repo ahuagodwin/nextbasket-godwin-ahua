@@ -10,7 +10,6 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Products = () => {
-
   const userRef = useRef(false)
   const data  = useSelector((state: RootState) => state.products)
   const dispatch = useDispatch<AppDispatch>()
@@ -60,7 +59,7 @@ const shouldDisplayLoadMoreButton = allProducts && displayedProducts < allProduc
         <Section className="flex justify-center items-center mx-auto mt-[50px]">
         <Button
           title="LOAD MORE PRODUCT"
-          stylesType="primary"
+          stylestype="primary"
           size="medium"
           handleClick={handleLoadMore}
         />

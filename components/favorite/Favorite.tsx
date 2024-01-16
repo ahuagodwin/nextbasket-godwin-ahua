@@ -44,7 +44,7 @@ const Favorite = () => {
         ))}
   
         <View className="cart-clear-btn">
-          <Button  handleClick={() => handleClearCart()} title="Clear Favorite" stylesType="secondary" size="small" /> 
+          <Button  handleClick={() => handleClearCart()} title="Clear Favorite" stylestype="secondary" size="small" /> 
         </View>
       </Boxs>
       ) }
