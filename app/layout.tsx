@@ -4,6 +4,8 @@ import './globals.css'
 import { MainLayout } from '@/components'
 import { Providers } from './provider'
 import 'react-loading-skeleton/dist/skeleton.css'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
 
 
 export const metadata: Metadata = {
@@ -24,6 +26,7 @@ export default function RootLayout({
             {children}
         </MainLayout>
         </Providers>
+        <ToastContainer position='bottom-left'/>
       </body>
     </html>
   )

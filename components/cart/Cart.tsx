@@ -1,6 +1,5 @@
 "use client";
 
-
 import { Icons, paths } from "@/constants";
 import { Anchor, Boxs, Button, Img, Section, Text, View } from "@/elements";
 import { appService } from "@/services";
@@ -8,25 +7,32 @@ import { AppDispatch } from "@/store/store";
 import { formatAmount, nodata } from "@/utils/helper";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
-const Cart = () => {
+const Cart: React.FC = () => {
   const cartItems = useSelector(appService.selectCartItems);
   const dispatch = useDispatch<AppDispatch>();
 
+
   const handleDecQty = (itemId: number) => {
     dispatch(appService.decreaseCart(itemId))
+    toast.success("Item reduced successfully")
   }
 
   const handleIncQty = (itemId: number) => {
     dispatch(appService.increaseCart(itemId))
+    toast.success("Item Increased successfully")
   }
 
   const handleDelItem = (itemId: number) => {
     dispatch(appService.deleteCartItem(itemId))
+    toast.success("Item deleted successfully")
+
   }
 
   const handleClearCart = () => {
     dispatch(appService.clearCart())
+    toast.success("Cart Cleared successfully")
   }
 
   const calculateTotal = () => {

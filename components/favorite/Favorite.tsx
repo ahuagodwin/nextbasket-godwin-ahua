@@ -7,6 +7,7 @@ import { AppDispatch } from "@/store/store";
 import { formatAmount, nodata } from "@/utils/helper";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const Favorite = () => {
   const favoriteItems = useSelector(appService.getAllFavorite);
@@ -15,10 +16,12 @@ const Favorite = () => {
 
   const handleDelItem = (itemId: number) => {
     dispatch(appService.deleteFavoriteItem(itemId))
+    toast.success("Favorite item deleted")
   }
 
   const handleClearCart = () => {
     dispatch(appService.clearWhist())
+    toast.success("Favorite item cleared")
   }
 
 

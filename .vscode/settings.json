@@ -9,6 +9,7 @@
         "reduxjs",
         "roboto",
         "stylestype",
-        "tailwindcss"
+        "tailwindcss",
+        "toastify"
     ]
 }
