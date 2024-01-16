@@ -1,6 +1,5 @@
 "use client";
 
-import { Notification } from "@/common";
 import { Icons, } from "@/constants";
 import {  Boxs, Button, Img, Section, Text, View } from "@/elements";
 import { appService } from "@/services";
@@ -9,7 +8,7 @@ import { formatAmount, nodata } from "@/utils/helper";
 
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
+import { Toaster, toast } from "sonner";
 
 const Cart: React.FC = () => {
   const cartItems = useSelector(appService.selectCartItems);
@@ -19,24 +18,24 @@ const Cart: React.FC = () => {
 
   const handleDecQty = (itemId: number) => {
     dispatch(appService.decreaseCart(itemId))
-    toast.success("Decrease Quantity")
+    toast("Decrease Quantity")
 
   }
 
   const handleIncQty = (itemId: number) => {
     dispatch(appService.increaseCart(itemId))
-    toast.success("Increased quantity")
+    toast("Increased quantity")
   }
 
   const handleDelItem = (itemId: number) => {
     dispatch(appService.deleteCartItem(itemId))
-    toast.success("Successfully deleted")
+    toast("Successfully deleted")
 
   }
 
   const handleClearCart = () => {
     dispatch(appService.clearCart())
-    setSuccessMsg("Cart cleared successfully")
+    toast("Successfully deleted")
   }
 
   const calculateTotal = () => {
@@ -74,7 +73,7 @@ const Cart: React.FC = () => {
       </Boxs>
       ) }
 
-      <Notification message={successMsg} />
+<Toaster richColors />
     </>
 
   );

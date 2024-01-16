@@ -39,7 +39,7 @@ const Products: React.FC<ProductsProps> = ({ displayButton, sliceAmount }) => {
     <>
       <FlexGrid isGrid={true} gridType="grid5" isBorder={false}>
         {Array.isArray(allProducts) &&
-          allProducts.slice(0, displayedProducts).map((item) => (
+          allProducts?.slice(0, displayedProducts)?.map((item) => (
             <Card key={item?.id} className="product-card">
               <Img src={item?.thumbnail ?? Images.Product1} alt="" width={100} height={100} />
               <Section className="product-content">

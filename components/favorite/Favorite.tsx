@@ -1,6 +1,5 @@
 "use client";
 
-import { Notification } from "@/common";
 import { Icons } from "@/constants";
 import { Boxs, Button, Img, Section, Text, View } from "@/elements";
 import { appService } from "@/services";
@@ -18,12 +17,12 @@ const Favorite = () => {
 
   const handleDelItem = (itemId: number) => {
     dispatch(appService.deleteFavoriteItem(itemId))
-    toast.success("Favorite item deleted")
+    toast("Favorite item deleted")
   }
 
   const handleClearCart = () => {
     dispatch(appService.clearWhist())
-    setSuccessMsg("Favorite item cleared")
+    toast("Favorite item cleared")
   }
 
 
@@ -53,8 +52,6 @@ const Favorite = () => {
         </View>
       </Boxs>
       ) }
-
-      <Notification message={successMsg} />
     </>
 
   );
