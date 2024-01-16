@@ -1,6 +1,6 @@
 "use client"
 
-import { BreadCrumbs, Colors } from '@/common';
+import { BreadCrumbs, Colors, Notification } from '@/common';
 import { Icons } from '@/constants';
 import { datas } from '@/data';
 import { Container, FlexGrid, Padding, Section, View, Img, Text,  Ratings, Span, Boxs, Button } from '@/elements'
@@ -16,7 +16,7 @@ import { toast } from 'react-toastify';
 const Single_Products = () => {
     const { id } = useParams();
     const productId = Array.isArray(id) ? parseInt(id[0], 10) : parseInt(id, 10);
-
+    const [ successMsg, setSuccessMsg ] = React.useState<string>('')
     const  {singleProduct} = useSelector(( state: RootState) => state.singleProduct)
     const dispatch = useDispatch<AppDispatch>()
 
@@ -37,11 +37,13 @@ const Single_Products = () => {
       const handleAddToWhist = () => {
         const { id, title, price, thumbnail, description } = data;
         dispatch(appService.addToWhist({ id, name: title, price, quantity: 1, thumbnail, description }));
-        toast.success("Added to Favorites")
+        setSuccessMsg("Added to Favorites")
       };
 
 
   return (
+    <>
+    
     <View>
         <Padding>
             <Container>
@@ -87,6 +89,9 @@ const Single_Products = () => {
             </Container>
         </Padding>
     </View>
+
+    <Notification message={successMsg} />
+    </>
   )
 }
 

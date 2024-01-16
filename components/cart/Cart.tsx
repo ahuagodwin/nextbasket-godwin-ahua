@@ -1,10 +1,12 @@
 "use client";
 
-import { Icons, paths } from "@/constants";
-import { Anchor, Boxs, Button, Img, Section, Text, View } from "@/elements";
+import { Notification } from "@/common";
+import { Icons, } from "@/constants";
+import {  Boxs, Button, Img, Section, Text, View } from "@/elements";
 import { appService } from "@/services";
 import { AppDispatch } from "@/store/store";
 import { formatAmount, nodata } from "@/utils/helper";
+
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -12,27 +14,29 @@ import { toast } from "react-toastify";
 const Cart: React.FC = () => {
   const cartItems = useSelector(appService.selectCartItems);
   const dispatch = useDispatch<AppDispatch>();
+  const [ successMsg, setSuccessMsg ] = React.useState<string>('')
 
 
   const handleDecQty = (itemId: number) => {
     dispatch(appService.decreaseCart(itemId))
-    toast.success("Item reduced successfully")
+    toast.success("Decrease Quantity")
+
   }
 
   const handleIncQty = (itemId: number) => {
     dispatch(appService.increaseCart(itemId))
-    toast.success("Item Increased successfully")
+    toast.success("Increased quantity")
   }
 
   const handleDelItem = (itemId: number) => {
     dispatch(appService.deleteCartItem(itemId))
-    toast.success("Item deleted successfully")
+    toast.success("Successfully deleted")
 
   }
 
   const handleClearCart = () => {
     dispatch(appService.clearCart())
-    toast.success("Cart Cleared successfully")
+    setSuccessMsg("Cart cleared successfully")
   }
 
   const calculateTotal = () => {
@@ -49,7 +53,7 @@ const Cart: React.FC = () => {
            <Boxs className="cart-inner-left">
               <Img src={item?.thumbnail} alt={item?.name} width={100} height={100} />
               <Section className="flex justify-start items-start flex-col">
-                <Text>{item?.name}</Text>
+                <Text>{item?.name?.slice(0, 18) + "..."}</Text>
                 {item?.description?.slice(0, 18) + "..."}
               </Section>
            </Boxs>
@@ -64,12 +68,13 @@ const Cart: React.FC = () => {
         ))}
   
         <View className="cart-clear-btn">
-          <Button  handleClick={() => handleClearCart()} title="Clear Cart" stylestype="secondary" size="medium-x" /> 
-          <Button title={`Total: ${formatAmount(calculateTotal().toFixed(2))}`}  stylestype="secondary"  size="medium-x"  /> 
-          <Anchor as={paths.home}><Button title="Continue Shopping" stylestype="secondary"  size="medium-x"  /> </Anchor>
+          <Button  handleClick={() => handleClearCart()} title="Clear Cart" stylestype="secondary" size="small" /> 
+          <Button title={`Total: ${formatAmount(calculateTotal().toFixed(2))}`}  stylestype="secondary"  size="small"  /> 
         </View>
       </Boxs>
       ) }
+
+      <Notification message={successMsg} />
     </>
 
   );

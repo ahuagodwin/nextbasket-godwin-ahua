@@ -1,5 +1,6 @@
 "use client";
 
+import { Notification } from "@/common";
 import { Icons } from "@/constants";
 import { Boxs, Button, Img, Section, Text, View } from "@/elements";
 import { appService } from "@/services";
@@ -11,7 +12,8 @@ import { toast } from "react-toastify";
 
 const Favorite = () => {
   const favoriteItems = useSelector(appService.getAllFavorite);
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>(); 
+  const [ successMsg, setSuccessMsg ] = React.useState<string>('')
 
 
   const handleDelItem = (itemId: number) => {
@@ -21,7 +23,7 @@ const Favorite = () => {
 
   const handleClearCart = () => {
     dispatch(appService.clearWhist())
-    toast.success("Favorite item cleared")
+    setSuccessMsg("Favorite item cleared")
   }
 
 
@@ -35,7 +37,7 @@ const Favorite = () => {
            <Boxs className="cart-inner-left">
               <Img src={item?.thumbnail} alt={item?.name} width={100} height={100} />
               <Section className="flex justify-start items-start flex-col">
-                <Text>{item?.name}</Text>
+                <Text>{item?.name?.slice(0, 18) + "..."}</Text>
                 {item?.description?.slice(0, 18) + "..."}
               </Section>
            </Boxs>
@@ -51,6 +53,8 @@ const Favorite = () => {
         </View>
       </Boxs>
       ) }
+
+      <Notification message={successMsg} />
     </>
 
   );
