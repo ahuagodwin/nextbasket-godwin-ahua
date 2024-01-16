@@ -2,7 +2,7 @@
 
 
 import { Icons } from "@/constants";
-import { Container, Padding, Section, Span, View } from "@/elements";
+import { Anchor, Container, Padding, Section, Span, View } from "@/elements";
 import Link from "next/link";
 import React from "react";
 import NavbarTop from "./Navbar_Top";
@@ -25,7 +25,6 @@ const Navbar = () => {
   const favoriteItems = useSelector(appService.getAllFavorite);
 
 
-
   return (
     <>
       <NavbarTop />
@@ -35,7 +34,7 @@ const Navbar = () => {
           <View
             className={`nav_container ${isFixed ? "nav-fixed" : "inherit"}`}
           >
-            <View className="nav-left">Bandage</View>
+            <Anchor as="/"><View className="nav-left">Bandage</View></Anchor>
             <View className="nav-right">
               <Section className="right-links">
                 {datas.navData.map((item, index) => {
